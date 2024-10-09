@@ -16,6 +16,7 @@ require (
 	github.com/jsdidierlaurent/echo-middleware v1.0.3
 	github.com/jsdidierlaurent/go-pingdom v1.0.1-0.20200611160140-94f3cde59009
 	github.com/jsdidierlaurent/golang-jenkins v0.0.0-20200828155557-e515459e5266
+	github.com/jsdidierlaurent/uptime-client-go v1.4.1
 	github.com/labstack/echo/v4 v4.12.0
 	github.com/labstack/gommon v0.4.2
 	github.com/orcaman/concurrent-map v0.0.0-20190314100340-2693aad1ed75
@@ -43,7 +44,7 @@ require (
 	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect
 	github.com/golang/protobuf v1.3.1 // indirect
 	github.com/gomodule/redigo v2.0.0+incompatible // indirect
-	github.com/google/go-querystring v1.0.0 // indirect
+	github.com/google/go-querystring v1.1.0 // indirect
 	github.com/google/uuid v1.1.1 // indirect
 	github.com/hashicorp/go-cleanhttp v0.5.1 // indirect
 	github.com/hashicorp/go-retryablehttp v0.6.4 // indirect
@@ -62,6 +63,7 @@ require (
 	github.com/spf13/jwalterweatherman v1.0.0 // indirect
 	github.com/spf13/pflag v1.0.3 // indirect
 	github.com/stretchr/objx v0.5.0 // indirect
+	github.com/uptime-com/uptime-client-go v1.3.0 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasttemplate v1.2.2 // indirect
 	golang.org/x/crypto v0.22.0 // indirect
