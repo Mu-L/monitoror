@@ -16,6 +16,7 @@ export enum TileType {
   JenkinsBuild = 'JENKINS-BUILD',
   AzureDevOpsBuild = 'AZUREDEVOPS-BUILD',
   AzureDevOpsRelease = 'AZUREDEVOPS-RELEASE',
+  UptimecomCheck = 'UPTIMECOM-CHECK',
 
   Empty = 'EMPTY',
   Group = 'GROUP',
