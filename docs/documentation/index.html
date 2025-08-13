@@ -182,6 +182,18 @@
               <li><a href="#tile-travisci-build">TRAVISCI-BUILD</a></li>
             </ul>
           </li>
+          <li>
+            <a href="#uptimecom">
+              <svg class="m-documentation--menu-icon" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="/assets/images/icons.svg#pingdom"/>
+              </svg>
+              Uptime.com
+            </a>
+            <ul>
+              <li><a href="#tile-uptimecom-check">UPTIMECOM-CHECK</a></li>
+              <li><a href="#tile-generate-uptimecom-check"><span class="tag-generate">GENERATE:</span>UPTIMECOM-CHECK</a></li>
+            </ul>
+          </li>
         </ul>
       </li>
       <li>
@@ -339,6 +351,15 @@
 
             <svg class="m-documentation-card--icon" xmlns="http://www.w3.org/2000/svg">
               <use xlink:href="/assets/images/icons.svg#travis-ci"/>
+            </svg>
+          </span>
+        </a>
+        <a href="#uptimecom" class="m-documentation-card">
+          <span class="m-documentation-card--mask">
+            <span class="m-documentation-card--title">Uptime.com</span>
+
+            <svg class="m-documentation-card--icon" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="/assets/images/icons.svg#uptimecom"/>
             </svg>
           </span>
         </a>
@@ -2468,6 +2489,152 @@ MO_MONITORABLE_TRAVISCI_TIMEOUT=2000
         In this example, the tile will show the status of
         <code><a href="https://github.com/Alex-D/check-disk-space">github.com/Alex-D/check-disk-space</a>@master</code>
       </p>
+    </div>
+
+    <div class="m-documentation--block">
+      <svg class="m-documentation--tile-icon" xmlns="http://www.w3.org/2000/svg">
+        <use xlink:href="/assets/images/icons.svg#uptimecom"/>
+      </svg>
+
+      <h3 id="uptimecom">Uptime.com</h3>
+
+      <p>
+        Uptime.com checks interface with
+        <a href="https://uptime.com/">uptime.com</a>
+      </p>
+
+      <h5 class="m-documentation--configuration-side-title">Core configuration</h5>
+
+      <dl>
+        <dt><code>MO_MONITORABLE_UPTIMECOM_URL</code> <code class="type">string</code></dt>
+        <dd>
+          Uptime.com API base URL <br>
+          <span class="tag">Default:</span> <code>https://uptime.com/api/v1/</code>
+        </dd>
+
+        <dt><code>MO_MONITORABLE_UPTIMECOM_TOKEN</code> <code class="type">number</code> <span
+          class="required">required</span></dt>
+        <dd>
+          Your private API token <br>
+          On Uptime.Com, go to
+          <a href="https://uptime.com/api/tokens">Settings > API</a>
+        </dd>
+
+        <dt><code>MO_MONITORABLE_UPTIMCOM_TIMEOUT</code> <code class="type">number</code></dt>
+        <dd>
+          Timeout in milliseconds before returning error <br>
+          <span class="tag">Default:</span> <code>1000</code>
+        </dd>
+
+        <dt><code>MO_MONITORABLE_UPTIMCOM_CACHEEXPIRATION</code> <code class="type">number</code></dt>
+        <dd>
+          Specific cache duration for Uptime.com check <br>
+          <span class="tag">Default:</span> <code>30000</code>
+        </dd>
+      </dl>
+
+      <p class="success-block">
+        <svg xmlns="http://www.w3.org/2000/svg">
+          <use xlink:href="/assets/images/icons.svg#configuration-variants"/>
+        </svg>
+        <a href="#configuration-variants">Configuration Variants</a> are available for Uptime.com
+      </p>
+
+      <pre class="example"><code>
+MO_MONITORABLE_UPTIMECOM_URL="https://uptime.com/api/v1/"
+MO_MONITORABLE_UPTIMECOM_TOKEN="thisisyourtoken"
+MO_MONITORABLE_UPTIMECOM_TIMEOUT=1000
+MO_MONITORABLE_UPTIMECOM_CACHEEXPIRATION=30000
+      </code></pre>
+
+      <h4 id="tile-uptimecom-check">UPTIMECOM-CHECK</h4>
+
+      <p>
+        Show state of a Uptime.com specific check.
+      </p>
+
+      <h5 class="m-documentation--configuration-side-title">UI configuration</h5>
+
+      <dl>
+        <dt><code>id</code> <code class="type">number</code> <span class="required">required</span></dt>
+        <dd>
+          Uptime.com check ID
+        </dd>
+      </dl>
+
+      <div class="m-documentation--example-and-demo">
+        <pre class="example"><code class="language-json">
+{
+  "type": "UPTIMECOM-CHECK",
+  "params": {
+    "id": 10
+  }
+}
+        </code></pre>
+
+        <div class="m-documentation--demo">
+          <div class="m-documentation--demo-tile">
+            <div class="m-documentation--demo-label">Check name</div>
+            <svg class="m-documentation--demo-icon" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="/assets/images/icons.svg#uptimecom"/>
+            </svg>
+          </div>
+          <div class="m-documentation--demo-switch">
+            <label class="m-documentation--demo-switch-label m-documentation--demo-switch-succeeded">
+              <input data-state-switch name="uptimecom-check-state" type="radio" value="succeeded">
+              Success
+            </label>
+            <label class="m-documentation--demo-switch-label m-documentation--demo-switch-warning">
+              <input data-state-switch name="uptimecom-check-state" type="radio" value="warning">
+              Maintenance
+            </label>
+            <label class="m-documentation--demo-switch-label m-documentation--demo-switch-error">
+              <input data-state-switch name="uptimecom-check-state" type="radio" value="error">
+              Error
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <h4 id="tile-generate-uptimecom-check">GENERATE:UPTIMECOM-CHECK</h4>
+
+      <p>
+        Show state of all Uptime.com checks.
+      </p>
+
+      <p class="note">
+        <span class="tag">Note</span>
+        This tile is a generator tile that will be replaced by N classic
+        <code><a href="#tile-uptimecom-check">UPTIMECOM-CHECK</a></code> tiles. <br>
+        N being the number of checks that match the filters that have been set.
+      </p>
+
+      <h5 class="m-documentation--configuration-side-title">UI configuration</h5>
+
+      <dl>
+        <dt><code>tags</code> <code class="type">string</code></dt>
+        <dd>
+          Uptime.com check tag list separated by commas
+        </dd>
+
+        <dt><code>sortBy</code> <code class="type">string</code></dt>
+        <dd>
+          Allow to sort checks by following:
+          <ul>
+            <li><code>name</code></li>
+          </ul>
+        </dd>
+      </dl>
+
+      <pre class="example"><code class="language-json">
+{
+  "type": "GENERATE:UPTIMECOM-CHECK",
+  "params": {
+    "tags": "eu-west",
+    "sortBy": "name"
+  }
+}
+      </code></pre>
     </div>
   </section>
 
